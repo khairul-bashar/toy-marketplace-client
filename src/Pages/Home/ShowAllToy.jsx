@@ -43,21 +43,21 @@ const ShowAllToy = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-5">
             {tabs?.map((tab) => (
               <Toy toy={tab} key={tab._id}></Toy>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-5">
             {tabs?.map((tab) => (
               <Toy toy={tab} key={tab._id}></Toy>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-5">
             {tabs?.map((tab) => (
               <Toy toy={tab} key={tab._id}></Toy>
             ))}

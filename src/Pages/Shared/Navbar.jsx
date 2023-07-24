@@ -55,6 +55,15 @@ const Navbar = () => {
                 Blogs
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                onClick={() => setToggle(false)}
+                className={({ isActive }) => (isActive ? "active" : "")}
+                to="/add-toys"
+              >
+                Add A Toys
+              </NavLink>
+            </li>
             {user ? (
               <>
                 <li>
@@ -64,15 +73,6 @@ const Navbar = () => {
                     to="MyToys"
                   >
                     My Toys
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    onClick={() => setToggle(false)}
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                    to="/add-toys"
-                  >
-                    Add A Toys
                   </NavLink>
                 </li>
               </>
