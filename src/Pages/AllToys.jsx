@@ -11,11 +11,21 @@ const AllToys = () => {
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
+
+
+   const search = (e) => {
+     e.preventDefault();
+
+     fetch(`http://localhost:3000/search?query=${e.target.search.value}`)
+       .then((res) => res.json())
+       .then((data) => setToys(data));
+   };
+
   
     return (
       <div className="container my-12 mx-auto">
         <form
-          //   onSubmit={search}
+            onSubmit={search}
           className="overflow-hidden relative my-10  shadow h-[50px] mx-w-[500px] min-w-[280px] rounded-full mx-auto"
         >
           <input
