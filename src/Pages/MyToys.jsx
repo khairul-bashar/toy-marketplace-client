@@ -12,7 +12,7 @@ const MyToys = () => {
 
   const [updateToy, setUpdateToy] = useState([]);
   const [deleteConfirm, setDeleteConfirm] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("descending");
+  const [selectedOption, setSelectedOption] = useState("ascending");
 
   const url = `http://localhost:3000/myToys/${user?.email}`;
 
@@ -54,7 +54,7 @@ const MyToys = () => {
 
   useEffect(() => {
     fetch(
-      `https://girls-toys.vercel.app/sort?sortby=${selectedOption.value}&email=${user.email}`
+      `http://localhost:3000/sort?sortby=${selectedOption.value}&email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => setUpdateToy(data));
