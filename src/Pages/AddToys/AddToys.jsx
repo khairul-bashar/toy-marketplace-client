@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CreatableSelect from "react-select/creatable";
+import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { useAuthGlobally } from "../../Context/AuthProvider";
 import useTitle from "../../Hooks/UseHooks";
@@ -20,6 +21,11 @@ const AddToys = () => {
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
+
+    if (rating.length > 5) {
+      toast.error("Rating must be under 5");
+      return;
+    }
     
     const toy = {
       photo_url,

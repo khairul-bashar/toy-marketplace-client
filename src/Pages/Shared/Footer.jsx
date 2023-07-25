@@ -73,7 +73,7 @@ const Footer = () => {
       <footer className="footer footer-center p-4 bg-[#1A1A1A] text-white">
         <div>
           <p>
-            Copyright © 2023 - All right reserved by DOLL TOYS Industries Ltd
+            Copyright © 2023 - All right reserved by Toy Cars Industries Ltd
           </p>
         </div>
       </footer>

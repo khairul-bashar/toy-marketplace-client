@@ -2,10 +2,12 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "../Components/Loader";
 
 const ViewDetails = () => {
     const { id } = useParams();
-    console.log(id);
+  const [loading, setLoading] = useState(false)
+  
   const [viewData, setViewData] = useState({});
 
     const {
@@ -22,12 +24,17 @@ const ViewDetails = () => {
   console.log(viewData);
 
   useEffect(() => {
+    setLoading(true)
     fetch(`http://localhost:3000/view-details/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setViewData(data);
+        setViewData(data)
+          setLoading(false);
       });
   }, [id]);
+  if (loading) {
+    return <Loader/>
+  }
   return (
     <div data-aos="zoom-in-right" className=" container mx-auto">
           <div className=" grid grid-cols-1 md:grid-cols-5 gap-x-10 my-20 px-5 items-center justify-center ">
