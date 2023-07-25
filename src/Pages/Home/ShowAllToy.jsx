@@ -7,17 +7,22 @@ import Toy from "./Toy";
 
 const ShowAllToy = () => {
   const { user } = useAuthGlobally();
-  
+  const [loading, setLoading] = useState(false);
+
 
   const [tabs, setTabs] = useState([]);
-  const [ subCategory, setSubCategory ] = useState("Regular car");
+  const [subCategory, setSubCategory] = useState("Regular car");
   // console.log(tabs);
 
   useEffect(() => {
+    setLoading(true)
     fetch(`http://localhost:3000/allToys/${subCategory}`)
       
       .then((res) => res.json())
-      .then((data) => setTabs(data));
+      .then((data) => {
+        setTabs(data);
+        setLoading(false)
+      });
   }, [subCategory]);
 
   const handleSubCategory = (sub) => {
@@ -29,6 +34,10 @@ const ShowAllToy = () => {
       toast.error("You Have To Login First To View Details");
     }
   };
+
+  // if (loading) {
+  //   return <Loader />;
+  // }
   return (
     <div className="container px-10 mx-auto py-10">
       <Tabs className="text-center">
@@ -42,6 +51,18 @@ const ShowAllToy = () => {
           </Tab>
         </TabList>
 
+        <div className="py-5">
+          <h2 className="text-3xl font-semibold text-warning text-center">
+            Top Rated Cars
+          </h2>
+          <p className="text-slate-500 text-base py-2 w-2/3 mx-auto">
+            This is Top rated Product . this product quantity is very Nice. my
+            expectations with its realistic. loves this doll toy and carries it
+            everywhere. Top Rated American doll toy Rating: 5.0 Add to Cart Top
+            Rated American doll toy Rating: 4.7 Add to Cart
+          </p>
+        </div>
+
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-5">
             {tabs?.map((tab) => (
@@ -49,6 +70,7 @@ const ShowAllToy = () => {
             ))}
           </div>
         </TabPanel>
+        
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-5">
             {tabs?.map((tab) => (

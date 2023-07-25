@@ -1,15 +1,17 @@
-import { RotatingLines } from "react-loader-spinner";
+import { ScaleLoader } from "react-spinners";
 
 const Loader = () => {
   return (
-    <div className="flex justify-center items-center h-[calc(100vh-68px)]">
-      <RotatingLines
-        strokeColor="grey"
-        strokeWidth="5"
-        animationDuration="0.75"
-        width="96"
-        visible={true}
-      />
+    <div
+      className="
+      h-[100vh]
+      flex 
+      flex-col 
+      justify-center 
+      items-center 
+    "
+    >
+      <ScaleLoader size={100} color="red" />
     </div>
   );
 };

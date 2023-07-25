@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Select from "react-select";
 import Swal from "sweetalert2";
+import Loader from "../Components/Loader";
 import { useAuthGlobally } from "../Context/AuthProvider";
 import useTitle from "../Hooks/UseHooks";
 import UpdateToy from "./UpdateToy";
 
 const MyToys = () => {
+  const [loading,setLoading] =useState(false)
   const { user } = useAuthGlobally();
 
   useTitle("My Toys");
@@ -17,10 +19,14 @@ const MyToys = () => {
   const url = `http://localhost:3000/myToys/${user?.email}`;
 
   useEffect(() => {
+    setLoading(true)
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setUpdateToy(data);
+        {
+          setUpdateToy(data)
+          setLoading(false)
+        };
       });
   }, [url, deleteConfirm]);
 
@@ -53,12 +59,20 @@ const MyToys = () => {
   ];
 
   useEffect(() => {
+    setLoading(true)
     fetch(
       `http://localhost:3000/sort?sortby=${selectedOption.value}&email=${user.email}`
     )
       .then((res) => res.json())
-      .then((data) => setUpdateToy(data));
+      .then((data) => {
+        setUpdateToy(data)
+      setLoading(false)
+      });
   }, [selectedOption]);
+
+  if (loading) {
+    return <Loader/>
+  }
 
   return (
     <div className="container my-12 mx-auto">
