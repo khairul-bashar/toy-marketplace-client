@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../../public/toy.png";
 
 const Footer = () => {
   return (
@@ -7,8 +8,8 @@ const Footer = () => {
         <div>
           <Link to="/">
             <img
-              className="w-14 h-14 rounded-3xl border border-red-300"
-              src="https://previews.123rf.com/images/lumitar/lumitar1604/lumitar160400005/55700019-babyish-emblem-with-a-doll-girl-s-toys-pastel-color-palette-pink-pale-pink-blue-flat.jpg"
+              className="w-24 h-24 p-2 rounded-3xl border border-red-300"
+              src={logo}
               alt=""
             />
           </Link>
