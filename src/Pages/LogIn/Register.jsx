@@ -59,7 +59,7 @@ const Register = () => {
             name="name"
             placeholder="Enter user  name"
             required
-          />{" "}
+          />
           <br />
           <input
             className="w-[80%] px-3 py-2 my-3 rounded"
@@ -67,7 +67,7 @@ const Register = () => {
             name="email"
             placeholder="Enter your email"
             required
-          />{" "}
+          />
           <br />
           <input
             className="w-[80%] px-3 py-2 my-3 rounded"
@@ -75,7 +75,7 @@ const Register = () => {
             name="password"
             placeholder="Enter your password"
             required
-          />{" "}
+          />
           <br />
           <input
             className="w-[80%] px-3 py-2 my-3 rounded"
@@ -83,7 +83,7 @@ const Register = () => {
             name="photo"
             placeholder="Enter user photoURL"
             required
-          />{" "}
+          />
           <br />
           <p className="text-red-600 text-lg">{error}</p>
           <p className="text-green-600 text-lg">{success}</p>

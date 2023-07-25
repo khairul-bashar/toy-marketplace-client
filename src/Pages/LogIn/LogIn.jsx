@@ -135,13 +135,7 @@ const LogIn = () => {
             <FcGoogle className="text-[32px]" />
             <span>Continue with Google</span>
           </button>
-          <button
-            onClick={handelGithub}
-            className="p-[10px] border rounded flex justify-center items-center gap-[6px] mx-auto mb-5  "
-          >
-            <FcGoogle className="text-[32px]" />
-            <span>Continue with Github</span>
-          </button>
+          
         </div>
       </div>
     </main>
