@@ -50,6 +50,7 @@ const AddToys = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
+          form.reset()
           Swal.fire({
             title: "",
             text: "Data Inserted Successfully!",

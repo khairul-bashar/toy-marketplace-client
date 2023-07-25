@@ -3,29 +3,29 @@ import React from "react";
 const Testimonial = () => {
   return (
     <div>
-      <div class="container my-24 mx-auto md:px-6">
-        <section class="mb-32 text-center">
-          <h2 class="mb-12 text-3xl font-bold">Testimonials</h2>
+      <div className="container my-24 mx-auto px-8 md:px-6">
+        <section className="mb-32 text-center">
+          <h2 className="mb-12 text-3xl font-bold">Testimonials</h2>
 
-          <div class="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
-            <div class="mb-12 md:mb-0">
-              <div class="mb-6 flex justify-center">
+          <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
+            <div className="mb-12 md:mb-0">
+              <div className="mb-6 flex justify-center">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReYk9X8ZJqiduV_uDx2YInMxlvNIyjmTYtUDp5d-FW1RuN9tVx5wx0PZChGA&s"
-                  class="w-32 h-32 rounded-full shadow-lg dark:shadow-black/20"
+                  className="w-32 h-32 rounded-full shadow-lg dark:shadow-black/20"
                 />
               </div>
-              <h5 class="mb-2 text-lg font-bold">Maria Smantha</h5>
-              <h6 class="mb-4 font-medium text-primary dark:text-primary-400">
+              <h5 className="mb-2 text-lg font-bold">Maria Smantha</h5>
+              <h6 className="mb-4 font-medium text-primary dark:text-primary-400">
                 Web Developer
               </h6>
-              <p class="mb-4">
+              <p className="mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
                 eos id officiis hic tenetur quae quaerat ad velit ab hic.
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 96 960 960"
-                  class="inline-block w-6"
+                  className="inline-block w-6"
                 >
                   <path
                     fill="currentColor"

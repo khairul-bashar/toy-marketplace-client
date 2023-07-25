@@ -1,12 +1,14 @@
 import { updateProfile } from "firebase/auth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthGlobally } from "../../Context/AuthProvider";
 import useTitle from "../../Hooks/UseHooks";
 const Register = () => {
   useTitle("Register");
 
   const { createUser } = useAuthGlobally();
+  const navigate = useNavigate()
+  const from = location.state?.from?.pathname || "/";
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -37,6 +39,7 @@ const Register = () => {
         updateProfile(currentUser, { displayName: name, photoURL: photo });
         e.target.reset();
         setSuccess("User has created successfully");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);

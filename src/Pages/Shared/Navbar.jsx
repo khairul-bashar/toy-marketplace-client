@@ -8,6 +8,7 @@ import { useAuthGlobally } from "../../Context/AuthProvider";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
   const { user, logOut } = useAuthGlobally({});
+  console.log(user);
 
   const handelTost = () => {
     if (!user) {
@@ -81,7 +82,7 @@ const Navbar = () => {
             )}
 
             <li>
-              {user?.photoURL ? (
+              {user?(
                 <img
                   className="w-[35px] h-[35px] rounded-full"
                   src={user?.photoURL}
