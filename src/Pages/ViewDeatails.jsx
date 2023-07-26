@@ -25,11 +25,11 @@ const ViewDetails = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:3000/view-details/${id}`)
+    fetch(`https://toy-marketplace-server-phi.vercel.app/view-details/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setViewData(data)
-          setLoading(false);
+        setViewData(data);
+        setLoading(false);
       });
   }, [id]);
   if (loading) {

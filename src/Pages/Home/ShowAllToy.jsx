@@ -16,12 +16,13 @@ const ShowAllToy = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:3000/allToys/${subCategory}`)
-      
+    fetch(
+      `https://toy-marketplace-server-phi.vercel.app/allToys/${subCategory}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setTabs(data);
-        setLoading(false)
+        setLoading(false);
       });
   }, [subCategory]);
 

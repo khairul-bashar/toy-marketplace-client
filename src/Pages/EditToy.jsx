@@ -26,7 +26,7 @@ const EditToy = () => {
   
   const [selectedOption, setSelectedOption] = useState(sub_category);
   useEffect(() => {
-    fetch(`http://localhost:3000/view-details/${id}`)
+    fetch(`https://toy-marketplace-server-phi.vercel.app/${id}`)
       .then((res) => res.json())
       .then((data) => setViewData(data));
   }, [id]);
@@ -58,7 +58,7 @@ const EditToy = () => {
     };
 
     console.log(price);
-    fetch(`http://localhost:3000/update/${id}`, {
+    fetch(`https://toy-marketplace-server-phi.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

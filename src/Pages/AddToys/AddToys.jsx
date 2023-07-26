@@ -39,7 +39,7 @@ const AddToys = () => {
       description,
     };
     
-    fetch("http://localhost:3000/add-toys", {
+    fetch("https://toy-marketplace-server-phi.vercel.app/add-toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -50,7 +50,7 @@ const AddToys = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          form.reset()
+          form.reset();
           Swal.fire({
             title: "",
             text: "Data Inserted Successfully!",
