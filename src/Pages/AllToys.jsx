@@ -11,7 +11,7 @@ const AllToys = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/allToys`)
+    fetch(`https://vercel.com/khairul-bashar/toy-marketplace-server/allToys`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -22,7 +22,9 @@ const AllToys = () => {
   const search = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:3000/search?query=${e.target.search.value}`)
+    fetch(
+      `https://vercel.com/khairul-bashar/toy-marketplace-server/search?query=${e.target.search.value}`
+    )
       .then((res) => res.json())
       .then((data) => setToys(data));
   };
