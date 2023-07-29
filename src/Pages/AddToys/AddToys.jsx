@@ -39,7 +39,7 @@ const AddToys = () => {
       description,
     };
     
-    fetch("https://toy-marketplace-server-phi.vercel.app/add-toys", {
+    fetch("https://toy-marketplace-server-gules.vercel.app/add-toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

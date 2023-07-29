@@ -16,7 +16,7 @@ const MyToys = () => {
   const [deleteConfirm, setDeleteConfirm] = useState(0);
   const [selectedOption, setSelectedOption] = useState("ascending");
 
-  const url = `https://toy-marketplace-server-phi.vercel.app/myToys/${user?.email}`;
+  const url = `https://toy-marketplace-server-gules.vercel.app/myToys/${user?.email}`;
 
   useEffect(() => {
     setLoading(true)
@@ -33,7 +33,7 @@ const MyToys = () => {
   const deleteToy = (id) => {
     const isDelete = confirm("Are you sure you want to delete this?");
     if (isDelete) {
-      fetch(`https://toy-marketplace-server-phi.vercel.app/delete/${id}`, {
+      fetch(`https://toy-marketplace-server-gules.vercel.app/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -61,7 +61,7 @@ const MyToys = () => {
   useEffect(() => {
     setLoading(true)
     fetch(
-      `https://toy-marketplace-server-phi.vercel.app/sort?sortby=${selectedOption.value}&email=${user.email}`
+      `https://toy-marketplace-server-gules.vercel.app/sort?sortby=${selectedOption.value}&email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => {

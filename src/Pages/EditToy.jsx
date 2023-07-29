@@ -58,7 +58,7 @@ const EditToy = () => {
     };
 
     console.log(price);
-    fetch(`https://toy-marketplace-server-phi.vercel.app/update/${id}`, {
+    fetch(`https://toy-marketplace-server-gules.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

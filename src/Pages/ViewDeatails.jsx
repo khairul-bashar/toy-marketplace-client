@@ -25,7 +25,7 @@ const ViewDetails = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`https://toy-marketplace-server-phi.vercel.app/view-details/${id}`)
+    fetch(`https://toy-marketplace-server-gules.vercel.app/view-details/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setViewData(data);

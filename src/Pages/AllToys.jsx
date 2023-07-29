@@ -11,7 +11,7 @@ const AllToys = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://toy-marketplace-server-phi.vercel.app/allToys`)
+    fetch(`https://toy-marketplace-server-gules.vercel.app/allToys`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -23,7 +23,7 @@ const AllToys = () => {
     e.preventDefault();
 
     fetch(
-      `https://toy-marketplace-server-phi.vercel.app/search?query=${e.target.search.value}`
+      `https://toy-marketplace-server-gules.vercel.app/search?query=${e.target.search.value}`
     )
       .then((res) => res.json())
       .then((data) => setToys(data));

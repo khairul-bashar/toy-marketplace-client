@@ -17,7 +17,7 @@ const ShowAllToy = () => {
   useEffect(() => {
     setLoading(true)
     fetch(
-      `https://toy-marketplace-server-phi.vercel.app/allToys/${subCategory}`
+      `https://toy-marketplace-server-gules.vercel.app/allToys/${subCategory}`
     )
       .then((res) => res.json())
       .then((data) => {
