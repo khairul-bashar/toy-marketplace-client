@@ -3,6 +3,7 @@ import useTitle from '../../Hooks/UseHooks';
 import Gallery from './Gallery/Gallery';
 import Hero from './Hero';
 import ShowAllToy from './ShowAllToy';
+import Services from '../../Components/Services/Services';
 
 const Home = () => {
     useTitle('Home')
@@ -11,7 +12,7 @@ const Home = () => {
             <Hero />
             <Gallery/>
             <ShowAllToy />
-            {/* <Testimonial/> */}
+            <Services/>
         </div>
     );
 };
